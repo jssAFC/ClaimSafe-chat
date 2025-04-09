@@ -21,7 +21,7 @@ const io = socketio(server);
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
-const botName = "ChatCord Bot";
+const botName = "ClaimSafe Bot";
 
 // Redis adapter setup with error handling
 (async () => {
@@ -46,7 +46,7 @@ io.on("connection", (socket) => {
     socket.join(user.room);
 
     // Welcome current user
-    socket.emit("message", formatMessage(botName, "Welcome to ChatCord!"));
+    socket.emit("message", formatMessage(botName, "Welcome to ClaimSafe!"));
 
     // Broadcast when a user connects
     socket.broadcast
